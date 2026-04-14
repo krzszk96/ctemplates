@@ -166,6 +166,113 @@
     }
   }
 
+  &__payment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    .checkout__section-title {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-icons {
+    display: flex;
+    gap: 6px;
+  }
+
+  &__card-icon {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding: 3px 7px;
+    border-radius: 4px;
+    border: 1px solid #e0d8ce;
+
+    &--visa { color: #1a1f71; background: #eef0fa; }
+    &--mc   { color: #eb001b; background: #fdecea; }
+    &--amex { color: #007bc1; background: #e8f4fb; }
+  }
+
+  &__stripe-mock {
+    margin-bottom: 20px;
+  }
+
+  &__stripe-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: #888;
+    background: #f5f0ea;
+    border: 1px solid #e0d8ce;
+    border-radius: 6px;
+    padding: 6px 12px;
+
+    strong {
+      color: #635bff;
+    }
+  }
+
+  &__stripe-lock {
+    font-size: 0.75rem;
+  }
+
+  &__input-icon-wrap {
+    position: relative;
+  }
+
+  &__input-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+
+  &__cvv-hint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ddd;
+    color: #666;
+    font-size: 0.65rem;
+    font-weight: 700;
+    cursor: help;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  &__test-hint {
+    margin: 16px 0 0;
+    font-size: 0.78rem;
+    color: #aaa;
+    background: #f5f0ea;
+    border-radius: 6px;
+    padding: 10px 14px;
+    line-height: 1.6;
+
+    code {
+      font-family: monospace;
+      color: #7a6652;
+      font-size: 0.82rem;
+    }
+  }
+
+  &__payment-error {
+    background: #fdecea;
+    color: #b05a5a;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    border: 1px solid #f5c6c6;
+  }
+
   &__place-btn {
     background: #c9a96e;
     color: #fff;
@@ -176,6 +283,10 @@
     font-weight: 600;
     cursor: pointer;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     transition: background 0.2s;
 
     &:hover:not(:disabled) {
@@ -186,6 +297,24 @@
       background: #ddd;
       cursor: not-allowed;
     }
+
+    &--processing {
+      background: #b5935a;
+    }
+  }
+
+  &__spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
   }
 
   &__secure-note {

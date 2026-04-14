@@ -2,7 +2,7 @@
   <div class="checkout__container">
 
     <div class="checkout__header">
-      <a class="checkout__back" routerLink="/cart">← Back to cart</a>
+      <a class="checkout__back" routerLink="/products">← Back to templates</a>
       <h1 class="checkout__title">Checkout</h1>
     </div>
 
@@ -57,44 +57,64 @@
 
           <!-- Payment -->
           <section class="checkout__section">
-            <h2 class="checkout__section-title">Payment</h2>
-            <div class="checkout__card-icons">
-              <span class="checkout__card-icon">VISA</span>
-              <span class="checkout__card-icon">MC</span>
-              <span class="checkout__card-icon">AMEX</span>
+            <div class="checkout__payment-header">
+              <h2 class="checkout__section-title">Payment</h2>
+              <div class="checkout__card-icons">
+                <span class="checkout__card-icon checkout__card-icon--visa">VISA</span>
+                <span class="checkout__card-icon checkout__card-icon--mc">MC</span>
+                <span class="checkout__card-icon checkout__card-icon--amex">AMEX</span>
+              </div>
             </div>
+
+            <div class="checkout__stripe-mock">
+              <div class="checkout__stripe-badge">
+                <span class="checkout__stripe-lock">🔒</span> Powered by <strong>Stripe</strong>
+              </div>
+            </div>
+
             <form class="checkout__form" [formGroup]="paymentForm">
               <div class="checkout__field">
                 <label class="checkout__label" for="cardName">Name on card</label>
-                <input class="checkout__input" id="cardName" type="text" formControlName="cardName" placeholder="Jane Smith" />
+                <input class="checkout__input" id="cardName" type="text" formControlName="cardName" placeholder="Jane Smith" autocomplete="cc-name" />
                 @if (paymentForm.get('cardName')?.invalid && paymentForm.get('cardName')?.touched) {
                   <span class="checkout__error">Required</span>
                 }
               </div>
               <div class="checkout__field">
                 <label class="checkout__label" for="cardNumber">Card number</label>
-                <input class="checkout__input" id="cardNumber" type="text" formControlName="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" />
+                <div class="checkout__input-icon-wrap">
+                  <input class="checkout__input" id="cardNumber" type="text" formControlName="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" />
+                  <span class="checkout__input-icon">💳</span>
+                </div>
                 @if (paymentForm.get('cardNumber')?.invalid && paymentForm.get('cardNumber')?.touched) {
                   <span class="checkout__error">Required</span>
                 }
               </div>
               <div class="checkout__row">
                 <div class="checkout__field">
-                  <label class="checkout__label" for="expiry">Expiry date</label>
-                  <input class="checkout__input" id="expiry" type="text" formControlName="expiry" placeholder="MM / YY" maxlength="7" />
+                  <label class="checkout__label" for="expiry">Expiry</label>
+                  <input class="checkout__input" id="expiry" type="text" formControlName="expiry" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" />
                   @if (paymentForm.get('expiry')?.invalid && paymentForm.get('expiry')?.touched) {
                     <span class="checkout__error">Required</span>
                   }
                 </div>
                 <div class="checkout__field">
-                  <label class="checkout__label" for="cvv">CVV</label>
-                  <input class="checkout__input" id="cvv" type="text" formControlName="cvv" placeholder="123" maxlength="4" />
+                  <label class="checkout__label" for="cvv">
+                    CVV
+                    <span class="checkout__cvv-hint" title="3-digit code on back of card">?</span>
+                  </label>
+                  <input class="checkout__input" id="cvv" type="text" formControlName="cvv" placeholder="123" maxlength="4" autocomplete="cc-csc" />
                   @if (paymentForm.get('cvv')?.invalid && paymentForm.get('cvv')?.touched) {
                     <span class="checkout__error">Required</span>
                   }
                 </div>
               </div>
             </form>
+
+            <p class="checkout__test-hint">
+              Test card: <code>4242 4242 4242 4242</code> · any expiry · any CVV<br/>
+              Decline test: <code>4000 0000 0000 0002</code>
+            </p>
           </section>
 
         </div>
@@ -111,12 +131,21 @@
               <span>Total</span>
               <span>${{ cartService.total() }}</span>
             </div>
+            @let _processing = paymentService.status() === 'processing';
+            @if (errorMessage()) {
+              <div class="checkout__payment-error">{{ errorMessage() }}</div>
+            }
             <button
               class="checkout__place-btn"
-              [disabled]="cartService.count() === 0"
+              [class.checkout__place-btn--processing]="_processing"
+              [disabled]="cartService.count() === 0 || _processing"
               (click)="placeOrder()"
             >
-              Place order · ${{ cartService.total() }}
+              @if (_processing) {
+                <span class="checkout__spinner"></span> Processing…
+              } @else {
+                Place order · ${{ cartService.total() }}
+              }
             </button>
             <p class="checkout__secure-note">🔒 Secure checkout · Instant download</p>
           </div>
