@@ -1,10 +1,13 @@
 @let _product = product();
 
-<article class="product-card" (click)="goToDetail()" role="button" tabindex="0" (keydown.enter)="goToDetail()">
+<article class="product-card" [class.product-card--in-cart]="inCart()" (click)="goToDetail()" role="button" tabindex="0" (keydown.enter)="goToDetail()">
   <div class="product-card__image-wrapper">
     <img class="product-card__image" [src]="_product.previewUrl" [alt]="_product.title" loading="lazy" />
     @if (_product.badge) {
       <app-product-badge [type]="_product.badge" />
+    }
+    @if (inCart()) {
+      <div class="product-card__in-cart">✓ In cart</div>
     }
   </div>
 

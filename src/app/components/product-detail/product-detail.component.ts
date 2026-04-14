@@ -1,6 +1,7 @@
 import { Component, inject, signal, computed } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
+import { CartService } from '../../services/cart.service';
 import { Product } from '../../models/product.model';
 import { ProductBadgeComponent } from '../shared/product-badge/product-badge.component';
 
@@ -14,6 +15,7 @@ export class ProductDetailComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly productsService = inject(ProductsService);
+  private readonly cartService = inject(CartService);
 
   readonly product = computed<Product | undefined>(() => {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -22,6 +24,11 @@ export class ProductDetailComponent {
 
   readonly activeImage = signal<string>('');
   readonly added = signal(false);
+
+  readonly inCart = computed(() => {
+    const p = this.product();
+    return p ? this.cartService.isInCart(p.id) : false;
+  });
 
   readonly mainImage = computed<string>(() => {
     const p = this.product();
@@ -34,6 +41,8 @@ export class ProductDetailComponent {
   }
 
   addToCart(): void {
+    const p = this.product();
+    if (p) this.cartService.add(p);
     this.added.set(true);
     setTimeout(() => this.added.set(false), 2000);
   }

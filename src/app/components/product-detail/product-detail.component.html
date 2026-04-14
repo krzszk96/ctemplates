@@ -79,10 +79,11 @@
             <span class="detail__price">${{ _product.price }}</span>
             <button
               class="detail__add-btn"
-              [class.detail__add-btn--added]="added()"
+              [class.detail__add-btn--added]="inCart()"
+              [disabled]="inCart()"
               (click)="addToCart()"
             >
-              {{ added() ? 'Added to cart ✓' : 'Add to cart' }}
+              {{ inCart() ? 'Added to cart ✓' : 'Add to cart' }}
             </button>
           </div>
 

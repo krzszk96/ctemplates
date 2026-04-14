@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+  readonly cartService = inject(CartService);
   readonly menuOpen = signal(false);
 
   toggleMenu(): void {
