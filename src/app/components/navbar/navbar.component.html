@@ -1,0 +1,31 @@
+<header class="navbar">
+  <div class="navbar__inner">
+    <a class="navbar__brand" routerLink="/">CTemplates</a>
+
+    <ul class="navbar__links">
+      <li><a class="navbar__link" routerLink="/products">Templates</a></li>
+      <li><a class="navbar__link" routerLink="/products">Categories</a></li>
+      <li><a class="navbar__link" routerLink="/products">Pricing</a></li>
+    </ul>
+
+    <button class="navbar__cta" routerLink="/products">Browse templates</button>
+
+    <button
+      class="navbar__burger"
+      [class.navbar__burger--open]="menuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  @if (menuOpen()) {
+    <div class="navbar__mobile-menu">
+      <a class="navbar__mobile-link" routerLink="/products" (click)="toggleMenu()">Templates</a>
+      <a class="navbar__mobile-link" routerLink="/products" (click)="toggleMenu()">Categories</a>
+      <a class="navbar__mobile-link" routerLink="/products" (click)="toggleMenu()">Pricing</a>
+      <button class="navbar__cta" (click)="toggleMenu()">Browse templates</button>
+    </div>
+  }
+</header>

@@ -1,0 +1,72 @@
+import { Product } from '../models/product.model';
+
+export const MOCK_PRODUCTS: Product[] = [
+  {
+    id: 1,
+    title: 'Floral Wedding Invitation',
+    category: 'Invitations',
+    price: 12,
+    previewUrl: 'https://placehold.co/400x300/c9a96e/ffffff?text=Invitation',
+    badge: 'Bestseller',
+  },
+  {
+    id: 2,
+    title: 'Elegant Save the Date',
+    category: 'Save the Date',
+    price: 9,
+    previewUrl: 'https://placehold.co/400x300/b07d62/ffffff?text=Save+the+Date',
+    badge: 'New',
+  },
+  {
+    id: 3,
+    title: 'Minimalist Thank You Card',
+    category: 'Cards',
+    price: 7,
+    previewUrl: 'https://placehold.co/400x300/8a9e85/ffffff?text=Thank+You',
+  },
+  {
+    id: 4,
+    title: 'Boho Wedding Program',
+    category: 'Programs',
+    price: 10,
+    previewUrl: 'https://placehold.co/400x300/c4a882/ffffff?text=Program',
+  },
+  {
+    id: 5,
+    title: 'Classic Table Number Set',
+    category: 'Table Decor',
+    price: 8,
+    previewUrl: 'https://placehold.co/400x300/9e8fa3/ffffff?text=Table+No.',
+    badge: 'Bundle',
+  },
+  {
+    id: 6,
+    title: 'Rustic Menu Card',
+    category: 'Cards',
+    price: 6,
+    previewUrl: 'https://placehold.co/400x300/b5956a/ffffff?text=Menu',
+  },
+  {
+    id: 7,
+    title: 'Watercolor Invitation Suite',
+    category: 'Invitations',
+    price: 24,
+    previewUrl: 'https://placehold.co/400x300/d4a5a5/ffffff?text=Suite',
+    badge: 'Premium',
+  },
+  {
+    id: 8,
+    title: 'Wedding Seating Chart',
+    category: 'Table Decor',
+    price: 14,
+    previewUrl: 'https://placehold.co/400x300/a3b18a/ffffff?text=Seating',
+    badge: 'New',
+  },
+  {
+    id: 9,
+    title: 'Bridal Shower Invitation',
+    category: 'Invitations',
+    price: 11,
+    previewUrl: 'https://placehold.co/400x300/e8c4b8/ffffff?text=Bridal',
+  },
+];

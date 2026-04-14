@@ -1,0 +1,28 @@
+<section class="products">
+  <div class="products__header">
+    <h1 class="products__title">Wedding Templates</h1>
+    <p class="products__subtitle">Beautiful Canva templates for your special day</p>
+  </div>
+
+  <div class="products__filters">
+    @for (cat of categories(); track cat) {
+      <button
+        class="products__filter-btn"
+        [class.products__filter-btn--active]="activeCategory() === cat"
+        (click)="setCategory(cat)"
+      >
+        {{ cat }}
+      </button>
+    }
+  </div>
+
+  @let items = filteredProducts();
+
+  <div class="products__grid">
+    @for (product of items; track product.id) {
+      <app-product-card [product]="product" (addToCart)="onAddToCart($event)" />
+    } @empty {
+      <p class="products__empty">No templates found in this category.</p>
+    }
+  </div>
+</section>
