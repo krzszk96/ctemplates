@@ -4,7 +4,7 @@ export interface Product {
   category: string;
   price: number;
   previewUrl: string;
-  badge?: string;
+  badge?: 'New' | 'Bestseller';
   description?: string;
   features?: string[];
   gallery?: string[];

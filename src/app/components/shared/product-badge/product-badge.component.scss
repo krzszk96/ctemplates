@@ -1,0 +1,19 @@
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 6px;
+
+  &--new {
+    background: #7a6652;
+    color: #f5ede3;
+  }
+
+  &--bestseller {
+    background: #3d2e22;
+    color: #e8d5b7;
+  }
+}

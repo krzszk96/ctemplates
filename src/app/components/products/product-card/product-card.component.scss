@@ -16,6 +16,12 @@
     position: relative;
     aspect-ratio: 4 / 3;
     overflow: hidden;
+
+    app-product-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
   }
 
   &__image {
@@ -23,20 +29,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-
-  &__badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #c9a96e;
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 3px 8px;
-    border-radius: 4px;
   }
 
   &__body {
@@ -73,7 +65,7 @@
   &__price {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #c9a96e;
+    color: #2c2c2c;
   }
 
   &__btn {

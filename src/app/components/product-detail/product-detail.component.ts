@@ -2,10 +2,11 @@ import { Component, inject, signal, computed } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../models/product.model';
+import { ProductBadgeComponent } from '../shared/product-badge/product-badge.component';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [RouterLink],
+  imports: [RouterLink, ProductBadgeComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
 })

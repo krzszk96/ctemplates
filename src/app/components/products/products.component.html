@@ -4,17 +4,11 @@
     <p class="products__subtitle">Beautiful Canva templates for your special day</p>
   </div>
 
-  <div class="products__filters">
-    @for (cat of categories(); track cat) {
-      <button
-        class="products__filter-btn"
-        [class.products__filter-btn--active]="activeCategory() === cat"
-        (click)="setCategory(cat)"
-      >
-        {{ cat }}
-      </button>
-    }
-  </div>
+  <app-product-filters
+    [categories]="categories()"
+    [activeCategory]="activeCategory()"
+    (categoryChange)="setCategory($event)"
+  />
 
   @let items = filteredProducts();
 

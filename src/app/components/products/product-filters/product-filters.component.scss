@@ -1,0 +1,30 @@
+.product-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 32px;
+
+  &__btn {
+    background: #f5f0ea;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #c9a96e;
+      color: #c9a96e;
+    }
+
+    &--active {
+      background: #c9a96e;
+      color: #fff;
+      border-color: #c9a96e;
+    }
+  }
+}

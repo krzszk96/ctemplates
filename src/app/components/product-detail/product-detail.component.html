@@ -19,7 +19,9 @@
               [alt]="_product.title"
             />
             @if (_product.badge) {
-              <span class="detail__badge">{{ _product.badge }}</span>
+              <div class="detail__badge">
+                <app-product-badge [type]="_product.badge" />
+              </div>
             }
           </div>
 

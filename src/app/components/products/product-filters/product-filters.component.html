@@ -1,0 +1,11 @@
+<div class="product-filters">
+  @for (cat of categories(); track cat) {
+    <button
+      class="product-filters__btn"
+      [class.product-filters__btn--active]="activeCategory() === cat"
+      (click)="select(cat)"
+    >
+      {{ cat }}
+    </button>
+  }
+</div>

@@ -78,7 +78,7 @@ export const MOCK_PRODUCTS: Product[] = [
     category: 'Table Decor',
     price: 8,
     previewUrl: 'https://placehold.co/400x300/9e8fa3/ffffff?text=Table+No.',
-    badge: 'Bundle',
+    badge: undefined,
     description:
       'A set of 20 classic table number cards with an elegant serif font and subtle border detail. Coordinates beautifully with any wedding color palette.',
     features: ['Numbers 1–20 included', '4×6 in per card', 'Editable colors & fonts', 'Print at home or professionally'],
@@ -113,7 +113,7 @@ export const MOCK_PRODUCTS: Product[] = [
     category: 'Invitations',
     price: 24,
     previewUrl: 'https://placehold.co/400x300/d4a5a5/ffffff?text=Suite',
-    badge: 'Premium',
+    badge: undefined,
     description:
       'A complete watercolor wedding invitation suite including invitation, RSVP, details card, and envelope liner. Soft blush tones with hand-painted floral accents.',
     features: ['4-piece suite', 'Invitation, RSVP, details & envelope liner', 'Blush & gold palette', 'Commercial license'],

@@ -4,7 +4,7 @@
   <div class="product-card__image-wrapper">
     <img class="product-card__image" [src]="_product.previewUrl" [alt]="_product.title" loading="lazy" />
     @if (_product.badge) {
-      <span class="product-card__badge">{{ _product.badge }}</span>
+      <app-product-badge [type]="_product.badge" />
     }
   </div>
 
