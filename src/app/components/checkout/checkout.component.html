@@ -1,0 +1,129 @@
+<div class="checkout">
+  <div class="checkout__container">
+
+    <div class="checkout__header">
+      <a class="checkout__back" routerLink="/cart">← Back to cart</a>
+      <h1 class="checkout__title">Checkout</h1>
+    </div>
+
+    @if (submitted()) {
+      <div class="checkout__success">
+        <div class="checkout__success-icon">✓</div>
+        <h2 class="checkout__success-title">Order placed!</h2>
+        <p class="checkout__success-text">Thank you for your purchase. Check your email for the download link.</p>
+        <a class="checkout__success-link" routerLink="/products">Browse more templates</a>
+      </div>
+    } @else {
+      <div class="checkout__layout">
+
+        <!-- Left col: forms -->
+        <div class="checkout__forms">
+
+          <!-- Cart items -->
+          <section class="checkout__section">
+            <h2 class="checkout__section-title">Your items</h2>
+            <app-cart />
+          </section>
+
+          <!-- Contact details -->
+          <section class="checkout__section">
+            <h2 class="checkout__section-title">Contact details</h2>
+            <form class="checkout__form" [formGroup]="detailsForm">
+              <div class="checkout__row">
+                <div class="checkout__field">
+                  <label class="checkout__label" for="firstName">First name</label>
+                  <input class="checkout__input" id="firstName" type="text" formControlName="firstName" placeholder="Jane" />
+                  @if (detailsForm.get('firstName')?.invalid && detailsForm.get('firstName')?.touched) {
+                    <span class="checkout__error">Required</span>
+                  }
+                </div>
+                <div class="checkout__field">
+                  <label class="checkout__label" for="lastName">Last name</label>
+                  <input class="checkout__input" id="lastName" type="text" formControlName="lastName" placeholder="Smith" />
+                  @if (detailsForm.get('lastName')?.invalid && detailsForm.get('lastName')?.touched) {
+                    <span class="checkout__error">Required</span>
+                  }
+                </div>
+              </div>
+              <div class="checkout__field">
+                <label class="checkout__label" for="email">Email address</label>
+                <input class="checkout__input" id="email" type="email" formControlName="email" placeholder="jane@example.com" />
+                @if (detailsForm.get('email')?.invalid && detailsForm.get('email')?.touched) {
+                  <span class="checkout__error">Valid email required</span>
+                }
+              </div>
+            </form>
+          </section>
+
+          <!-- Payment -->
+          <section class="checkout__section">
+            <h2 class="checkout__section-title">Payment</h2>
+            <div class="checkout__card-icons">
+              <span class="checkout__card-icon">VISA</span>
+              <span class="checkout__card-icon">MC</span>
+              <span class="checkout__card-icon">AMEX</span>
+            </div>
+            <form class="checkout__form" [formGroup]="paymentForm">
+              <div class="checkout__field">
+                <label class="checkout__label" for="cardName">Name on card</label>
+                <input class="checkout__input" id="cardName" type="text" formControlName="cardName" placeholder="Jane Smith" />
+                @if (paymentForm.get('cardName')?.invalid && paymentForm.get('cardName')?.touched) {
+                  <span class="checkout__error">Required</span>
+                }
+              </div>
+              <div class="checkout__field">
+                <label class="checkout__label" for="cardNumber">Card number</label>
+                <input class="checkout__input" id="cardNumber" type="text" formControlName="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" />
+                @if (paymentForm.get('cardNumber')?.invalid && paymentForm.get('cardNumber')?.touched) {
+                  <span class="checkout__error">Required</span>
+                }
+              </div>
+              <div class="checkout__row">
+                <div class="checkout__field">
+                  <label class="checkout__label" for="expiry">Expiry date</label>
+                  <input class="checkout__input" id="expiry" type="text" formControlName="expiry" placeholder="MM / YY" maxlength="7" />
+                  @if (paymentForm.get('expiry')?.invalid && paymentForm.get('expiry')?.touched) {
+                    <span class="checkout__error">Required</span>
+                  }
+                </div>
+                <div class="checkout__field">
+                  <label class="checkout__label" for="cvv">CVV</label>
+                  <input class="checkout__input" id="cvv" type="text" formControlName="cvv" placeholder="123" maxlength="4" />
+                  @if (paymentForm.get('cvv')?.invalid && paymentForm.get('cvv')?.touched) {
+                    <span class="checkout__error">Required</span>
+                  }
+                </div>
+              </div>
+            </form>
+          </section>
+
+        </div>
+
+        <!-- Right col: order summary -->
+        <aside class="checkout__sidebar">
+          <div class="checkout__summary">
+            <h2 class="checkout__section-title">Order summary</h2>
+            <div class="checkout__summary-row">
+              <span>Items ({{ cartService.count() }})</span>
+              <span>${{ cartService.total() }}</span>
+            </div>
+            <div class="checkout__summary-row checkout__summary-row--total">
+              <span>Total</span>
+              <span>${{ cartService.total() }}</span>
+            </div>
+            <button
+              class="checkout__place-btn"
+              [disabled]="cartService.count() === 0"
+              (click)="placeOrder()"
+            >
+              Place order · ${{ cartService.total() }}
+            </button>
+            <p class="checkout__secure-note">🔒 Secure checkout · Instant download</p>
+          </div>
+        </aside>
+
+      </div>
+    }
+
+  </div>
+</div>

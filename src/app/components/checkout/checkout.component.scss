@@ -1,0 +1,247 @@
+.checkout {
+  background: #faf7f4;
+  min-height: calc(100vh - 64px);
+  padding: 40px 24px 64px;
+
+  &__container {
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: 32px;
+  }
+
+  &__back {
+    font-size: 0.875rem;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: inline-block;
+    margin-bottom: 12px;
+
+    &:hover {
+      color: #c9a96e;
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin: 0;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 32px;
+    align-items: start;
+
+    @media (max-width: 860px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__forms {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  // Section card
+  &__section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  &__section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin: 0 0 20px;
+  }
+
+  &__card-icons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__card-icon {
+    background: #f0ebe4;
+    color: #888;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #e0d8ce;
+  }
+
+  // Form elements
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.02em;
+  }
+
+  &__input {
+    border: 1.5px solid #e0d8ce;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: #bbb;
+    }
+
+    &:focus {
+      border-color: #c9a96e;
+    }
+  }
+
+  &__error {
+    font-size: 0.75rem;
+    color: #b05a5a;
+  }
+
+  // Sidebar
+  &__sidebar {
+    position: sticky;
+    top: 88px;
+  }
+
+  &__summary {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #666;
+
+    &--total {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2c2c2c;
+      padding-top: 12px;
+      border-top: 1px solid #ede8e1;
+    }
+  }
+
+  &__place-btn {
+    background: #c9a96e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+
+    &:hover:not(:disabled) {
+      background: #b5935a;
+    }
+
+    &:disabled {
+      background: #ddd;
+      cursor: not-allowed;
+    }
+  }
+
+  &__secure-note {
+    font-size: 0.78rem;
+    color: #bbb;
+    text-align: center;
+    margin: 0;
+  }
+
+  // Success state
+  &__success {
+    text-align: center;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #7a9e7e;
+    color: #fff;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__success-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin: 0;
+  }
+
+  &__success-text {
+    color: #888;
+    margin: 0;
+    max-width: 360px;
+  }
+
+  &__success-link {
+    background: #c9a96e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #b5935a;
+    }
+  }
+}

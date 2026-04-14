@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, inject, output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -10,14 +10,8 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartComponent {
   readonly cartService = inject(CartService);
-  private readonly router = inject(Router);
 
   remove(productId: number): void {
     this.cartService.remove(productId);
-  }
-
-  checkout(): void {
-    // placeholder for checkout flow
-    alert('Checkout coming soon!');
   }
 }

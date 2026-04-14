@@ -20,7 +20,12 @@ export const routes: Routes = [
   },
   {
     path: 'cart',
+    redirectTo: 'checkout',
+    pathMatch: 'full',
+  },
+  {
+    path: 'checkout',
     loadComponent: () =>
-      import('./components/cart/cart.component').then((m) => m.CartComponent),
+      import('./components/checkout/checkout.component').then((m) => m.CheckoutComponent),
   },
 ];
