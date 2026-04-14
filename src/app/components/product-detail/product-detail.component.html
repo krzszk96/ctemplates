@@ -1,0 +1,98 @@
+@let _product = product();
+
+@if (_product) {
+  <div class="detail">
+    <div class="detail__container">
+
+      <button class="detail__back" (click)="goBack()">
+        ← Back to templates
+      </button>
+
+      <div class="detail__layout">
+
+        <!-- Gallery -->
+        <div class="detail__gallery">
+          <div class="detail__main-image-wrapper">
+            <img
+              class="detail__main-image"
+              [src]="mainImage()"
+              [alt]="_product.title"
+            />
+            @if (_product.badge) {
+              <span class="detail__badge">{{ _product.badge }}</span>
+            }
+          </div>
+
+          @if (_product.gallery && _product.gallery.length > 1) {
+            <div class="detail__thumbnails">
+              @for (img of _product.gallery; track img) {
+                <button
+                  class="detail__thumb-btn"
+                  [class.detail__thumb-btn--active]="mainImage() === img"
+                  (click)="selectImage(img)"
+                >
+                  <img class="detail__thumb" [src]="img" [alt]="_product.title" loading="lazy" />
+                </button>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Info -->
+        <div class="detail__info">
+          <span class="detail__category">{{ _product.category }}</span>
+          <h1 class="detail__title">{{ _product.title }}</h1>
+
+          <div class="detail__meta">
+            @if (_product.format) {
+              <span class="detail__meta-item">
+                <span class="detail__meta-label">Format</span>
+                {{ _product.format }}
+              </span>
+            }
+            @if (_product.dimensions) {
+              <span class="detail__meta-item">
+                <span class="detail__meta-label">Size</span>
+                {{ _product.dimensions }}
+              </span>
+            }
+          </div>
+
+          @if (_product.description) {
+            <p class="detail__description">{{ _product.description }}</p>
+          }
+
+          @if (_product.features && _product.features.length) {
+            <ul class="detail__features">
+              @for (feat of _product.features; track feat) {
+                <li class="detail__feature">
+                  <span class="detail__feature-icon">✓</span>
+                  {{ feat }}
+                </li>
+              }
+            </ul>
+          }
+
+          <div class="detail__purchase">
+            <span class="detail__price">${{ _product.price }}</span>
+            <button
+              class="detail__add-btn"
+              [class.detail__add-btn--added]="added()"
+              (click)="addToCart()"
+            >
+              {{ added() ? 'Added to cart ✓' : 'Add to cart' }}
+            </button>
+          </div>
+
+          <p class="detail__note">Instant download after purchase. Edit directly in Canva.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="detail__not-found">
+    <p>Template not found.</p>
+    <a routerLink="/products">Browse all templates</a>
+  </div>
+}

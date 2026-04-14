@@ -1,4 +1,5 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../../../models/product.model';
 
 @Component({
@@ -8,9 +9,10 @@ import { Product } from '../../../models/product.model';
 })
 export class ProductCardComponent {
   product = input.required<Product>();
-  addToCart = output<Product>();
 
-  onAddToCart(): void {
-    this.addToCart.emit(this.product());
+  constructor(private router: Router) {}
+
+  goToDetail(): void {
+    this.router.navigate(['/products', this.product().id]);
   }
 }

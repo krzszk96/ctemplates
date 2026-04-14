@@ -1,20 +1,22 @@
-@let p = product();
+@let _product = product();
 
-<article class="product-card">
+<article class="product-card" (click)="goToDetail()" role="button" tabindex="0" (keydown.enter)="goToDetail()">
   <div class="product-card__image-wrapper">
-    <img class="product-card__image" [src]="p.previewUrl" [alt]="p.title" loading="lazy" />
-    @if (p.badge) {
-      <span class="product-card__badge">{{ p.badge }}</span>
+    <img class="product-card__image" [src]="_product.previewUrl" [alt]="_product.title" loading="lazy" />
+    @if (_product.badge) {
+      <span class="product-card__badge">{{ _product.badge }}</span>
     }
   </div>
 
   <div class="product-card__body">
-    <span class="product-card__category">{{ p.category }}</span>
-    <h3 class="product-card__title">{{ p.title }}</h3>
+    <span class="product-card__category">{{ _product.category }}</span>
+    <h3 class="product-card__title">{{ _product.title }}</h3>
 
     <div class="product-card__footer">
-      <span class="product-card__price">${{ p.price }}</span>
-      <button class="product-card__btn" (click)="onAddToCart()">Get template</button>
+      <span class="product-card__price">${{ _product.price }}</span>
+      <button class="product-card__btn" (click)="$event.stopPropagation(); goToDetail()">
+        Get template
+      </button>
     </div>
   </div>
 </article>

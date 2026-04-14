@@ -17,4 +17,8 @@ export class ProductsService {
     if (category === 'All') return this._products();
     return this._products().filter((p) => p.category === category);
   }
+
+  getById(id: number): Product | undefined {
+    return this._products().find((p) => p.id === id);
+  }
 }

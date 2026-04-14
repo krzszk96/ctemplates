@@ -14,7 +14,6 @@ export class ProductsComponent {
 
   readonly categories = this.productsService.categories;
   readonly activeCategory = signal<string>('All');
-  readonly cartCount = signal<number>(0);
 
   readonly filteredProducts = computed<Product[]>(() =>
     this.productsService.getByCategory(this.activeCategory()),
@@ -22,10 +21,5 @@ export class ProductsComponent {
 
   setCategory(category: string): void {
     this.activeCategory.set(category);
-  }
-
-  onAddToCart(product: Product): void {
-    this.cartCount.update((n) => n + 1);
-    console.log('Added to cart:', product.title);
   }
 }

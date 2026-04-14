@@ -8,6 +8,17 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 12,
     previewUrl: 'https://placehold.co/400x300/c9a96e/ffffff?text=Invitation',
     badge: 'Bestseller',
+    description:
+      'A romantic floral wedding invitation template featuring delicate botanical illustrations. Fully editable in Canva — customize fonts, colors, and wording to match your wedding theme.',
+    features: ['Fully editable in Canva', 'Print-ready 5×7 in', 'Matching RSVP card included', 'Commercial license'],
+    gallery: [
+      'https://placehold.co/800x600/c9a96e/ffffff?text=Preview+1',
+      'https://placehold.co/800x600/d4b87e/ffffff?text=Preview+2',
+      'https://placehold.co/800x600/bfa060/ffffff?text=Preview+3',
+      'https://placehold.co/800x600/e8d5b0/555555?text=Preview+4',
+    ],
+    format: 'Canva Template',
+    dimensions: '5 × 7 in',
   },
   {
     id: 2,
@@ -16,6 +27,16 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 9,
     previewUrl: 'https://placehold.co/400x300/b07d62/ffffff?text=Save+the+Date',
     badge: 'New',
+    description:
+      'A timeless and elegant save the date card with a clean layout and refined typography. Perfect for announcing your wedding date in style.',
+    features: ['Editable text & colors', 'A6 postcard size', 'Digital & print ready', 'Instant download'],
+    gallery: [
+      'https://placehold.co/800x600/b07d62/ffffff?text=Preview+1',
+      'https://placehold.co/800x600/c49070/ffffff?text=Preview+2',
+      'https://placehold.co/800x600/a06a50/ffffff?text=Preview+3',
+    ],
+    format: 'Canva Template',
+    dimensions: 'A6 (4.1 × 5.8 in)',
   },
   {
     id: 3,
@@ -23,6 +44,16 @@ export const MOCK_PRODUCTS: Product[] = [
     category: 'Cards',
     price: 7,
     previewUrl: 'https://placehold.co/400x300/8a9e85/ffffff?text=Thank+You',
+    description:
+      'A clean, minimalist thank you card to send to your guests after the big day. Simple elegance that lets your words shine.',
+    features: ['Minimal modern design', 'Flat card 4×6 in', 'Easy Canva editing', 'Instant download'],
+    gallery: [
+      'https://placehold.co/800x600/8a9e85/ffffff?text=Preview+1',
+      'https://placehold.co/800x600/9db098/ffffff?text=Preview+2',
+      'https://placehold.co/800x600/7a8e75/ffffff?text=Preview+3',
+    ],
+    format: 'Canva Template',
+    dimensions: '4 × 6 in',
   },
   {
     id: 4,
@@ -30,6 +61,16 @@ export const MOCK_PRODUCTS: Product[] = [
     category: 'Programs',
     price: 10,
     previewUrl: 'https://placehold.co/400x300/c4a882/ffffff?text=Program',
+    description:
+      'A bohemian-style wedding ceremony program with earthy tones and hand-drawn accents. Guide your guests through every moment of your ceremony.',
+    features: ['Front & back design', 'US Letter size', 'Editable order of events', 'Instant download'],
+    gallery: [
+      'https://placehold.co/800x600/c4a882/ffffff?text=Preview+1',
+      'https://placehold.co/800x600/d4b892/ffffff?text=Preview+2',
+      'https://placehold.co/800x600/b49872/ffffff?text=Preview+3',
+    ],
+    format: 'Canva Template',
+    dimensions: '8.5 × 11 in',
   },
   {
     id: 5,
@@ -38,6 +79,16 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 8,
     previewUrl: 'https://placehold.co/400x300/9e8fa3/ffffff?text=Table+No.',
     badge: 'Bundle',
+    description:
+      'A set of 20 classic table number cards with an elegant serif font and subtle border detail. Coordinates beautifully with any wedding color palette.',
+    features: ['Numbers 1–20 included', '4×6 in per card', 'Editable colors & fonts', 'Print at home or professionally'],
+    gallery: [
+      'https://placehold.co/800x600/9e8fa3/ffffff?text=Preview+1',
+      'https://placehold.co/800x600/b0a0b5/ffffff?text=Preview+2',
+      'https://placehold.co/800x600/8c7e91/ffffff?text=Preview+3',
+    ],
+    format: 'Canva Template',
+    dimensions: '4 × 6 in',
   },
   {
     id: 6,
@@ -45,6 +96,16 @@ export const MOCK_PRODUCTS: Product[] = [
     category: 'Cards',
     price: 6,
     previewUrl: 'https://placehold.co/400x300/b5956a/ffffff?text=Menu',
+    description:
+      'A warm rustic menu card with a kraft-paper aesthetic and handwritten-style font. Perfect for farm-to-table or outdoor wedding receptions.',
+    features: ['Single-page menu layout', '4×9 in tall card', 'Editable courses & text', 'Instant download'],
+    gallery: [
+      'https://placehold.co/800x600/b5956a/ffffff?text=Preview+1',
+      'https://placehold.co/800x600/c8a87a/ffffff?text=Preview+2',
+      'https://placehold.co/800x600/a28258/ffffff?text=Preview+3',
+    ],
+    format: 'Canva Template',
+    dimensions: '4 × 9 in',
   },
   {
     id: 7,
@@ -53,6 +114,17 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 24,
     previewUrl: 'https://placehold.co/400x300/d4a5a5/ffffff?text=Suite',
     badge: 'Premium',
+    description:
+      'A complete watercolor wedding invitation suite including invitation, RSVP, details card, and envelope liner. Soft blush tones with hand-painted floral accents.',
+    features: ['4-piece suite', 'Invitation, RSVP, details & envelope liner', 'Blush & gold palette', 'Commercial license'],
+    gallery: [
+      'https://placehold.co/800x600/d4a5a5/ffffff?text=Invitation',
+      'https://placehold.co/800x600/e0b8b8/ffffff?text=RSVP',
+      'https://placehold.co/800x600/c89898/ffffff?text=Details',
+      'https://placehold.co/800x600/f0d0d0/555555?text=Envelope',
+    ],
+    format: 'Canva Template',
+    dimensions: '5 × 7 in',
   },
   {
     id: 8,
@@ -61,6 +133,16 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 14,
     previewUrl: 'https://placehold.co/400x300/a3b18a/ffffff?text=Seating',
     badge: 'New',
+    description:
+      'A large-format seating chart poster to display at your reception entrance. Clean grid layout with space for up to 150 guests across 15 tables.',
+    features: ['Up to 150 guests', '18×24 in poster', 'Editable table names & guest list', 'Print-ready PDF export'],
+    gallery: [
+      'https://placehold.co/800x600/a3b18a/ffffff?text=Preview+1',
+      'https://placehold.co/800x600/b5c49a/ffffff?text=Preview+2',
+      'https://placehold.co/800x600/91a07a/ffffff?text=Preview+3',
+    ],
+    format: 'Canva Template',
+    dimensions: '18 × 24 in',
   },
   {
     id: 9,
@@ -68,5 +150,15 @@ export const MOCK_PRODUCTS: Product[] = [
     category: 'Invitations',
     price: 11,
     previewUrl: 'https://placehold.co/400x300/e8c4b8/ffffff?text=Bridal',
+    description:
+      'A sweet and feminine bridal shower invitation with a soft floral border and pastel color scheme. Easy to personalize for any bridal shower theme.',
+    features: ['Editable text & colors', '5×7 in card', 'Digital & print ready', 'Instant download'],
+    gallery: [
+      'https://placehold.co/800x600/e8c4b8/ffffff?text=Preview+1',
+      'https://placehold.co/800x600/f0d4c8/555555?text=Preview+2',
+      'https://placehold.co/800x600/d8b4a8/ffffff?text=Preview+3',
+    ],
+    format: 'Canva Template',
+    dimensions: '5 × 7 in',
   },
 ];

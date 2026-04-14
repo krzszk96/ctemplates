@@ -5,4 +5,9 @@ export interface Product {
   price: number;
   previewUrl: string;
   badge?: string;
+  description?: string;
+  features?: string[];
+  gallery?: string[];
+  format?: string;
+  dimensions?: string;
 }
