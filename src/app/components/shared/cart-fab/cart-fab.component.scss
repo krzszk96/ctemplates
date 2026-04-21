@@ -1,0 +1,44 @@
+.cart-fab {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #c9a96e;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+  transition: background 0.2s, transform 0.2s;
+
+  &:hover {
+    background: #b5935a;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  &__count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #3d2e22;
+    color: #e8d5b7;
+    font-size: 0.6rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    line-height: 1;
+  }
+}

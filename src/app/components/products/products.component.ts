@@ -1,12 +1,13 @@
 import { Component, signal, computed, inject } from '@angular/core';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductFiltersComponent } from './product-filters/product-filters.component';
+import { CartFabComponent } from '../shared/cart-fab/cart-fab.component';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-products',
-  imports: [ProductCardComponent, ProductFiltersComponent],
+  imports: [ProductCardComponent, ProductFiltersComponent, CartFabComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })
